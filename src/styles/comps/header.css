@@ -1,0 +1,146 @@
+
+.brand {
+    font-family: inherit;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #00aaff;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    margin: 0 auto;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    z-index: 10;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s ease-in-out;
+}
+
+.menu.is-active {
+    top: 0;
+    left: 0;
+}
+
+.menu-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    margin: 1.25rem;
+}
+
+.menu-link {
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #fd81b7;
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #f53d8d;
+}
+
+@media only screen and (min-width: 58rem) {
+    .menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        background: none;
+        box-shadow: none;
+    }
+
+    .menu-inner {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1.75rem;
+        margin: 0 auto;
+        margin-right: 5rem;
+    }
+
+    .menu-link {
+        text-transform: capitalize;
+    }
+}
+
+.burger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    order: -1;
+    width: 1.75rem;
+    height: auto;
+    border: none;
+    outline: none;
+    visibility: visible;
+}
+
+.burger-line {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 2px;
+    margin: 6px auto;
+    transform: rotate(0deg);
+    background-color: #00aaff;
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 58rem) {
+    .burger {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.overlay.is-active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
