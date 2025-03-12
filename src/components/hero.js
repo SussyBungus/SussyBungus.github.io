@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="hero__content">
         <h1 className="hero__title">Welcome to the Sussy Zone!</h1>
         <p className="hero__description">
-          The ultimate destination for all things sus. Join the fun and embrace the chaos!
+          The gooning villa for all things sus. Goon the fun and lalalal!
         </p>
         <a href="#products" className="hero__cta">
           Join the Sussies
