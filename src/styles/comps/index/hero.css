@@ -1,17 +1,11 @@
-
-/* Styles for the hero section */
 .hero {
     display: flex;
     justify-content: center;
-    /* Center the content horizontally */
     align-items: center;
     padding: 5rem 0;
     flex-wrap: wrap;
-    /* Allow items to wrap on smaller screens */
-    margin-top: 90px;
-    /* Add margin to move it down */
     margin: 0 auto;
-    /* Center the hero horizontally */
+    margin-top: 25px;
 }
 
 .hero__content {
@@ -19,7 +13,7 @@
     max-width: 400px;
     flex-basis: 50%;
     margin-right: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .hero__title {
@@ -59,6 +53,7 @@
 .hero__image img {
     max-width: 100%;
     height: auto;
+    border-radius: 18px;
 }
 
 @media screen and (max-width: 768px) {

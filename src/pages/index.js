@@ -7,8 +7,8 @@ import '../styles/comps/index/highlights.css';
 import '../styles/comps/footer.css';
 
 import Header from '../components/header';
-import Hero from '../components/hero';
-import Highlights from '../components/highlights';
+import Hero from '../components/index/hero';
+import Highlights from '../components/index/highlights';
 import Footer from '../components/footer';
 
 function Index() {

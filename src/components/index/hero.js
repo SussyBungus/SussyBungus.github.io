@@ -1,5 +1,5 @@
 import React from "react";
-import amoung from "../assets/amoung.png";
+import amoung from "../../assets/sus.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         <p className="hero__description">
           The gooning villa for all things sus. Goon the fun and lalalal!
         </p>
-        <a href="#products" className="hero__cta">
+        <a href="#highlights" className="hero__cta">
           Join the Sussies
         </a>
       </div>
