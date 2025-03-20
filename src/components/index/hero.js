@@ -9,9 +9,23 @@ const Hero = () => {
         <p className="hero__description">
           The gooning villa for all things sus. Goon the fun and lalalal!
         </p>
-        <a href="#highlights" className="hero__cta">
+        <a 
+          href="#highlights" 
+          className="hero__cta"
+          onClick={(e) => {
+            e.preventDefault();
+            const target = document.getElementById('highlights');
+            if (target) {
+              const offset = 120; // Adjust this value if needed
+              const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+              window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+          }}
+        >
           Join the Sussies
         </a>
+
+
       </div>
       <div className="hero__image">
         <img src={amoung} alt="Hero" />
