@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import feature1 from '../../assets/amoung.png';
+import feature1 from '../../assets/code.png';
 import feature2 from '../../assets/amoung.png';
-import feature3 from '../../assets/amoung.png';
+import feature3 from '../../assets/food.jpg';
 
 const Highlights = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -47,7 +47,7 @@ const Highlights = () => {
           whileHover={{ scale: 1.05 }}
         >
           <img src={feature3} alt="Feature 3" />
-          <p className="highlight-caption">📜 Smooth Animations</p>
+          <p className="highlight-caption">Food</p>
         </motion.div>
       </div>
     </motion.section>

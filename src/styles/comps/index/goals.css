@@ -34,7 +34,7 @@
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .goal-card {
       width: 80%;
       align-self: center;

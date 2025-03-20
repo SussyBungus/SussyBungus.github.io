@@ -38,9 +38,9 @@
 /* Image inside the card */
 .highlight-card img {
   width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border-radius: 8px;
+  height: 300px; /* Force same height */
+  object-fit: cover; /* Ensures images fill the box without distortion */
+  border-radius: 10px; /* Rounded corners */
   margin-bottom: 10px;
 }
 
@@ -52,15 +52,21 @@
   margin-top: 5px;
 }
 
-/* Responsive: Stack on smaller screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .highlight-items {
-    display: flex; /* Ensure flex is active */
+    display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 30px; /* Increase spacing between cards */
   }
 
   .highlight-card {
-    width: 90%;
+    width: 90%; /* Make sure it's wide enough */
+    max-width: 350px; /* Prevents overly wide cards */
+    padding: 15px;
+  }
+
+  .highlight-card img {
+    height: 280px; /* Keep images uniform */
   }
 }
