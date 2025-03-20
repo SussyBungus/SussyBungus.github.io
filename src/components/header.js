@@ -23,7 +23,7 @@ function Header() {
         <div className={`menu ${isMenuOpen ? 'is-active' : ''}`} id="menu">
           <ul className="menu-inner">
             <li className="menu-item"><a className="menu-link" href="/">sus</a></li>
-            <li className="menu-item"><a className="menu-link" href="/about">suss1</a></li>
+            <li className="menu-item"><a className="menu-link" href="/about">about</a></li>
           </ul>
         </div>
       </nav>
