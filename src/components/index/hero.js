@@ -1,5 +1,5 @@
 import React from "react";
-import amoung from "../../assets/sus.jpg";
+import rayray from "../../assets/rayray.jpg";
 import '../../styles/comps/index/hero.css';
 import '../../utils/type'
 const Hero = () => {
@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero__image">
-        <img src={amoung} alt="Raymond Lin" />
+        <img src={rayray} alt="Raymond Lin" />
       </div>
     </section>
   );
