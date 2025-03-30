@@ -2,23 +2,19 @@ import React from 'react';
 import '../styles/index.css';
 
 import Header from '../components/header';
-import Hero from '../components/index/hero';
-import Highlights from '../components/index/highlights';
-import Goals from '../components/index/goals';
+import Intro from '../components/about/intro';
 import Footer from '../components/footer';
 
-function Index() {
+function About() {
   return (
     <div className="App">
       <Header />
       <main>
-        <Hero />
-        <Highlights />
-        <Goals />
+        <Intro />
         <Footer />
       </main>
     </div>
   );
 }
 
-export default Index;
+export default About;

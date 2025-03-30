@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import feature1 from '../../assets/code.png';
-import feature2 from '../../assets/amoung.png';
+import feature2 from '../../assets/badminton.jpg';
 import feature3 from '../../assets/food.jpg';
+import '../../styles/comps/index/highlights.css';
 
 const Highlights = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);

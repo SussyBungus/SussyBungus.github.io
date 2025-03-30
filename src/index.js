@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './pages/index.js';
+import App from './app.js';
 import reportWebVitals from './reportWebVitals';
 
 // Disable right-click and certain key combinations
