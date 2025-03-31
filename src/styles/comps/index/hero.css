@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    justify-content: center;  /* Center content */
+    justify-content: center;  
     align-items: center;
     padding: 4rem 2rem 6rem;
     flex-wrap: wrap;
@@ -43,7 +43,7 @@
 .hero__cta {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #FF9AA2; /* Soft pink */
+    background-color: #FF9AA2; 
     color: #fff;
     font-size: 1rem;
     text-transform: uppercase;
@@ -54,29 +54,29 @@
 }
 
 .hero__cta--secondary {
-    background-color: #FFDAC1; /* Pastel yellow */
+    background-color: #FFDAC1;
     color: #222;
 }
 
 .hero__cta:hover {
-    background-color: #FF6F91; /* Slightly deeper pink */
+    background-color: #FF6F91; 
 }
 
 .hero__cta--secondary:hover {
-    background-color: #FFD166; /* Warm peachy yellow */
+    background-color: #FFD166; 
 }
 
 .hero__image {
-    width: 25%;  /* Make it square */
-    height: 0;  /* Initial height set to 0 */
-    padding-bottom: 25%;  /* Create square aspect ratio */
-    position: relative;  /* Set relative positioning for the image */
+    width: 25%;  
+    height: 0;  
+    padding-bottom: 25%; 
+    position: relative; 
     text-align: center;
     margin-top: 20px;
     margin-bottom: 15px;
     display: flex;
-    justify-content: center; /* Ensure it's centered */
-    align-items: center; /* Ensure it's centered vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .hero__image img {
@@ -87,7 +87,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Ensure image is contained within the square */
+    object-fit: cover;  
     border-radius: 18px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -100,8 +100,8 @@
 
     .hero__content,
     .hero__image {
-        flex-basis: 100%; /* Both take full width in smaller screens */
-        max-width: 100%;  /* Ensure both items are equally wide */
+        flex-basis: 100%; 
+        max-width: 100%;  
     }
 
     .hero__buttons {
@@ -109,8 +109,8 @@
     }
 
     .hero__image {
-        width: 80%;  /* Adjust image size for mobile */
-        padding-bottom: 80%;  /* Maintain square aspect ratio */
+        width: 80%;  
+        padding-bottom: 80%;  
     }
 
     .hero__image img {

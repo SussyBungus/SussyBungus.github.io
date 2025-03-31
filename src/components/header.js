@@ -11,13 +11,20 @@ function Header() {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Change link text based on current page
-  const navLink = location.pathname === "/about" ? { path: "/", label: "Home" } : { path: "/about", label: "About" };
+  // Define navigation links
+  const navLinks = [
+    { path: "/about", label: "About" },
+    { path: "/contact", label: "Contact" },
+    { path: "/projects", label: "Projects" },
+    // Add more pages easily here
+  ];
 
   return (
     <header className="header" id="header">
       <nav className="navbar container">
         <Link to="/" className="brand">Sussy Bungus</Link>
+        
+        {/* Burger Menu */}
         <div className="burger" id="burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className="burger-line"></span>
           <span className="burger-line"></span>
@@ -30,9 +37,13 @@ function Header() {
         {/* Menu */}
         <div className={`menu ${isMenuOpen ? 'is-active' : ''}`} id="menu">
           <ul className="menu-inner">
-            <li className="menu-item">
-              <Link className="menu-link" to={navLink.path}>{navLink.label}</Link>
-            </li>
+            {navLinks
+              .filter(link => link.path !== location.pathname) // Hide current page
+              .map((link, index) => (
+                <li key={index} className="menu-item">
+                  <Link className="menu-link" to={link.path}>{link.label}</Link>
+                </li>
+            ))}
           </ul>
         </div>
       </nav>

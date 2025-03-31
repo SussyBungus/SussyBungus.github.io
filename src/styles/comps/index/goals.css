@@ -1,5 +1,5 @@
 .goals {
-    text-align: center; /* Center the title */
+    text-align: center; 
     padding: 2rem 0;
   }
   
@@ -33,7 +33,6 @@
     align-self: flex-end;
   }
   
-  /* Responsive */
   @media screen and (max-width: 768px) {
     .goal-card {
       width: 80%;
