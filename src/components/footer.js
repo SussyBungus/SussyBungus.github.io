@@ -30,7 +30,6 @@ function Footer() {
 
           {/* Social Media Links */}
           <ul className="footer__socials">
-            <li><a href="/test"><i className="fab fa-discord"></i></a></li>
             <li><a href="https://instagram.com/sussy_bungus"><i className="fab fa-instagram"></i></a></li>
             <li><a href="https://www.tiktok.com/@sussy_bungus"><i className="fab fa-tiktok"></i></a></li>
             <li><a href="https://www.youtube.com/channel/UCjN4pHSgTFXjvz0Dtd6olGA/videos"><i className="fab fa-youtube"></i></a></li>

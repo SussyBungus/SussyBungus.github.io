@@ -14,7 +14,6 @@ function Header() {
   // Define navigation links
   const navLinks = [
     { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
     { path: "/projects", label: "Projects" },
     // Add more pages easily here
   ];

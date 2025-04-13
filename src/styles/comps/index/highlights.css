@@ -7,6 +7,7 @@
 .highlights-title {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #2c2c2c; /* Dark gray for contrast, maintaining readability */
 }
 
 .highlight-items {
@@ -17,7 +18,7 @@
 }
 
 .highlight-card {
-  background: white;
+  background: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -29,22 +30,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  visibility: visible; 
-  opacity: 1; 
+  visibility: visible;
+  opacity: 1;
 }
 
 .highlight-card img {
   width: 100%;
-  height: 300px; 
+  height: 300px;
   object-fit: cover;
-  border-radius: 10px; 
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
 .highlight-caption {
   font-size: 1rem;
   font-weight: bold;
-  color: #333;
+  color: #333; /* Darker text for better contrast and legibility */
   margin-top: 5px;
 }
 
@@ -53,16 +54,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 30px; 
+    row-gap: 30px;
   }
 
   .highlight-card {
-    width: 90%; 
-    max-width: 350px; 
+    width: 90%;
+    max-width: 350px;
     padding: 15px;
   }
 
   .highlight-card img {
-    height: 280px; 
+    height: 280px;
   }
 }

@@ -2,19 +2,19 @@ import React from 'react';
 import '../styles/index.css';
 
 import Header from '../components/header';
-import Hero from '../components/about/hero';
+import Project from '../components/projects/project'
 import Footer from '../components/footer';
 
-function About() {
+function Projects() {
   return (
     <div className="App">
       <Header />
       <main>
-        <Hero />
+        < Project/>
         <Footer />
       </main>
     </div>
   );
 }
 
-export default About;
+export default Projects;

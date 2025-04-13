@@ -12,8 +12,8 @@ const Hero = () => {
           I create <b>engaging experiences</b> through code.
         </p>
         <div className="hero__buttons">
-          <a href="#projects" className="hero__cta">View My Work</a>
-          <a href="#contact" className="hero__cta hero__cta--secondary">Contact Me</a>
+          <a href="#goals" className="hero__cta">View My Goals</a>
+          <a href="https://instagram.com/sussy_bungus" className="hero__cta hero__cta--secondary">Contact Me</a>
         </div>
       </div>
       <div className="hero__image">

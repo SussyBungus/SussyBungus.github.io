@@ -1,42 +1,50 @@
 .goals {
-    text-align: center; 
-    padding: 2rem 0;
-  }
-  
-  .goals-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-  
-  .goals-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
+  text-align: center;
+  padding: 3rem 0; /* Increase the padding for more space */
+  border-radius: 15px; /* Rounded corners */
+}
+
+.goals-title {
+  font-size: 2.5rem; /* Slightly larger for better readability */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2c2c2c; /* Dark gray for better contrast */
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.goal-card {
+  width: 60%;
+  padding: 1.5rem;
+  background: #FFDAC1; /* Soft beige */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  color: #2c2c2c; /* Dark text for readability */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.goal-card.left {
+  align-self: flex-start;
+}
+
+.goal-card.right {
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
   .goal-card {
-    width: 60%;
-    padding: 1.5rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 80%; /* Full width on smaller screens */
+    align-self: center;
   }
-  
-  .goal-card.left {
-    align-self: flex-start;
-  }
-  
-  .goal-card.right {
-    align-self: flex-end;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .goal-card {
-      width: 80%;
-      align-self: center;
-    }
-  }
-  
+}

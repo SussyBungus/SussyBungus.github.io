@@ -13,7 +13,7 @@ const Goals = () => {
   }, []);
 
   return (
-    <section className="goals">
+    <section className="goals" id="goals">
       <h2 className="goals-title">My Goals</h2>
       <div className="goals-list">
         {[
