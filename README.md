@@ -24,7 +24,7 @@ Here, I showcase my favorite projects, skills, and experiments in **software dev
 
 ## 📸 Preview
 
-[![Website Preview](https://yourdomain.com/screenshot.png)](https://yourdomain.com)
+[![Website Preview](../src/assets/preview.png)](https://yourdomain.com)
 
 > 🖥 Live Demo: [https://sussybungus.github.io/](https://sussybungus.github.io/)
 
