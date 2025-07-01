@@ -27,14 +27,10 @@ Here, I showcase my favorite projects, skills, and experiments in **software dev
 [![Website Preview](https://i.ibb.co/7Jpx8HVV/Screenshot-425.png)](https://sussybungus.github.io/)
 
 
-> 🖥 Live Demo: [https://sussybungus.github.io/](https://sussybungus.github.io/)
+> 🖥 Live Demo: [sussybungus.github.io/](https://sussybungus.github.io/)
 
 ---
 
-## 📁 Folder Structure
-
-
----
 
 ## 🧑‍💻 About Me
 
@@ -48,10 +44,9 @@ Hi, I’m **Raymond Lin** — a student passionate about:
 
 ## 📬 Contact
 
-- ✉️ Email: yourname@email.com  
-- 🌐 Portfolio: [yourdomain.com](https://yourdomain.com)  
-- 💼 LinkedIn: [linkedin.com/in/yourname](https://linkedin.com/in/yourname)  
-- 🐙 GitHub: [github.com/yourusername](https://github.com/yourusername)
+- ✉️ Email: toronto4raymond2010@gmail.com
+- 🌐 Portfolio: [sussybungus.github.io/](https://sussybungus.github.io/)
+- 🐙 GitHub: [github.com/SussyBungus](https://github.com/SussyBungus)
 
 ---
 
