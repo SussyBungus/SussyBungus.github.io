@@ -9,11 +9,6 @@ const ProjectsPage = () => {
       link: "#",
     },
     {
-      title: "LeetCode Tracker",
-      description: "A web tool to track coding streaks, problems solved, and daily goals.",
-      link: "#",
-    },
-    {
       title: "Study Planner",
       description: "An app to plan study sessions, set reminders, and manage your tasks.",
       link: "#",
@@ -24,23 +19,13 @@ const ProjectsPage = () => {
       link: "#",
     },
     {
-      title: "WeatherNow",
-      description: "A minimal weather app using live API data to show forecasts in real-time.",
-      link: "#",
-    },
-    {
       title: "Focus Timer",
       description: "A Pomodoro-style timer to help users focus on work and take breaks effectively.",
       link: "#",
     },
     {
-      title: "Flashcard Master",
-      description: "Study smarter with custom flashcards, spaced repetition, and progress tracking.",
-      link: "#",
-    },
-    {
-      title: "Crypto Tracker",
-      description: "Live cryptocurrency prices, charts, and portfolio management tool.",
+      title: "Ai Test Case Generator",
+      description: "Generate efficient, accurate software test cases using AI-powered prompts and validation logic.",
       link: "#",
     },
     {
@@ -54,7 +39,7 @@ const ProjectsPage = () => {
     <div className="projects-page">
       <h1 className="projects-title">My Projects</h1>
       <p className="projects-description">
-        Here are some of the projects I've been working on. I'm always building and learning!
+        Here are some of the projects I've been working on.
       </p>
 
       <div className="projects-grid">
