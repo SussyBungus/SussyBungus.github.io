@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/index.css';
 
 import Header from '../components/header';
-import Hero from '../components/about/hero';
+import Main from '../components/about/main';
 import Footer from '../components/footer';
 
 function About() {
@@ -10,7 +10,7 @@ function About() {
     <div className="App">
       <Header />
       <main>
-        <Hero />
+        <Main />
         <Footer />
       </main>
     </div>

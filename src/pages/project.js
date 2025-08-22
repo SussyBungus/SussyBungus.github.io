@@ -6,7 +6,7 @@ import Project from '../components/projects/project'
 import Footer from '../components/footer';
 
 function Projects() {
-  return (
+  return (      
     <div className="App">
       <Header />
       <main>
@@ -16,5 +16,5 @@ function Projects() {
     </div>
   );
 }
-
+ 
 export default Projects;

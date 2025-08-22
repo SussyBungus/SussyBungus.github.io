@@ -1,5 +1,5 @@
 import React from "react";
-import rayray from "../../assets/rayray.jpg";
+import rayray from "../../assets/heh.jpg";
 import '../../styles/comps/index/hero.css';
 import '../../utils/type'
 const Hero = () => {

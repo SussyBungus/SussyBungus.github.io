@@ -1,0 +1,165 @@
+.valentine-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6a0, #ffd6d6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  position: relative;
+  user-select: none;
+}
+
+.no-scroll { overflow: hidden; }
+
+.section {
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 6px #ff6f61;
+  max-width: 700px;
+  z-index: 2;
+  position: relative;
+  margin-top: -20px; /* reduce top spacing to fit */
+}
+
+.section h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+.section p { font-size: 1.3rem; line-height: 1.5; margin-bottom: 1rem; }
+.days { font-size: 1.8rem; font-weight: bold; color: #ffe0e0; }
+
+.valentine-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  z-index: 3;
+  position: relative;
+  opacity: 0;
+  animation: fadeInButtons 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInButtons {
+  to { opacity: 1; }
+}
+
+.valentine-buttons button {
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yes-btn { background: #ff6f61; color: white; }
+#yes-btn:hover { transform: scale(1.2); background: #ff3b2e; }
+#no-btn { background: #fff; color: #ff6f61; border: 2px solid #ff6f61; }
+#no-btn:hover { background: #ff6f61; color: white; }
+#yes-btn, #no-btn {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float 5s ease-in infinite;
+  top: 100%;
+  z-index: 0; /* behind text */
+  pointer-events: none;
+}
+
+.floating-heart.confetti {
+  font-size: 1.2rem;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-250px) scale(1.5); opacity: 0.8; }
+  100% { transform: translateY(-500px) scale(0.8); opacity: 0; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-800px); }
+}
+
+.scratch-card {
+  width: 350px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.scratch-message {
+  font-size: 1.3rem;
+  color: #fff;
+  text-shadow: 2px 2px 6px #ff6f61;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* behind canvas for scratch reveal */
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.beating-heart {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+}
+
+.celebration h1 {
+  font-size: 3rem;
+  text-align: center;
+  animation: popIn 1s ease forwards;
+}
+
+.celebration p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  .section h1 { font-size: 1.8rem; }
+  .section p { font-size: 1.1rem; }
+  .valentine-buttons button { font-size: 1rem; padding: 0.6rem 1.2rem; }
+  .scratch-card { width: 90%; height: 140px; }
+}

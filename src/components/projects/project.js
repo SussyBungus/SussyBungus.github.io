@@ -16,7 +16,7 @@ const ProjectsPage = () => {
     {
       title: "Portfolio Website",
       description: "My personal portfolio showcasing projects, skills, and contact information.",
-      link: "#",
+      link: "/",
     },
     {
       title: "Focus Timer",
