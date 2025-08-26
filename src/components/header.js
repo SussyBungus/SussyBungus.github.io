@@ -16,7 +16,6 @@ function Header() {
     { path: "/about", label: "About" },
     { path: "/projects", label: "Projects" },
     { path: "/gallery", label: "Gallery" },
-    { path: "/valentine", label: "Gallery" },
     // Add more pages easily here
   ];
 
