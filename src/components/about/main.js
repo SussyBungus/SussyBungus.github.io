@@ -82,7 +82,6 @@ const AboutMe = () => {
       <div className="about-section fade-in">
         <h2 className="section__title">Experience</h2>
         <ul className="exp__list">
-          <li>👔 QA Lead Manager (Team of 16 across Canada & India)</li>
           <li>🎮 Game Developer — <em>Drift and Relax</em> (Unity)</li>
           <li>🤖 Hackathon Developer — AI Study Planner Assistant</li>
           <li>🏫 Student Activity Council (SAC) & MAC Reps Leadership</li>
@@ -108,7 +107,7 @@ const AboutMe = () => {
       <div className="about-section fade-in">
         <h2 className="section__title">Awards & Achievements</h2>
         <div className="awards">
-          <div className="award">🏅 Grade 8 High Honours</div>
+          <div className="award">🏅 Grade 8  Honours</div>
           <div className="award">🏆 CCC J1/J2 Perfect Score</div>
           <div className="award">🎖️ Leadership Roles in SAC & MAC</div>
         </div>
