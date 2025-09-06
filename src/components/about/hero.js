@@ -71,7 +71,7 @@ const Hero = () => {
           
           <div className="hero-description">
             <p>
-              Welcome to my digital universe! I'm passionate about crafting elegant solutions, 
+              Welcome to my digital portfolio! I'm passionate about crafting elegant solutions, 
               leading dynamic teams, and exploring cutting-edge technologies. From immersive 
               game experiences to intelligent AI tools, I transform complex challenges into 
               beautiful, functional code.
@@ -108,15 +108,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="hero-cta">
-            <button className="cta-button primary">
-              <span>View My Work</span>
-              <div className="button-shine"></div>
-            </button>
-            <button className="cta-button secondary">
-              <span>Get In Touch</span>
-            </button>
-          </div>
+         
         </div>
       </div>
 
