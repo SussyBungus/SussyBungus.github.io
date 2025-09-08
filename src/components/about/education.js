@@ -32,21 +32,21 @@ const EducationExperience = () => {
       title: "Game Developer",
       company: "Drift and Relax (Unity)",
       description: "Developing an immersive racing game with realistic physics and stunning visuals",
-      period: "2025 - Present"
+      period: "2024 - Present"
     },
     { 
       icon: "🤖", 
       title: "Hackathon Developer",
       company: "AI Study Planner Assistant",
       description: "Built an intelligent study planning system using machine learning algorithms",
-      period: "2024"
+      period: "2024- Present"
     },
     { 
       icon: "🏫", 
       title: "Leadership Roles",
       company: "Student Activity Council & MAC Reps",
       description: "Leading student initiatives and representing student body in decision-making",
-      period: "2023 - Present"
+      period: "2024 - Present"
     }
   ];
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/comps/projects/project.css";
-
-// Import your images
 import previewImg from "../../assets/preview.png";
+import Modal from "./modal"; // ✅ Import modal
 
 const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -26,7 +25,7 @@ const ProjectsPage = () => {
       title: "AI Study Planner",
       description: "An intelligent study planning system using machine learning algorithms.",
       fullDescription: "Built during a hackathon, this AI-powered application helps students create optimized study schedules based on their learning patterns, course difficulty, and available time.",
-      technologies: ["Python", "Machine Learning", "React", "APIs"],
+      technologies: ["Python", "Machine Learning", "React", "OpenAi APIs","Gradio"],
       status: "Completed",
       category: "AI/ML",
       color: "#4ECDC4",
@@ -104,6 +103,17 @@ const ProjectsPage = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
   const getStatusColor = (status) => {
     switch (status) {
       case "Completed": return "#4ECDC4";
@@ -111,6 +121,14 @@ const ProjectsPage = () => {
       case "Live": return "#96CEB4";
       default: return "#FF9A7E";
     }
+  };
+
+  const handleModalClick = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
   };
 
   return (
@@ -187,7 +205,7 @@ const ProjectsPage = () => {
             <div className="card-footer">
               <button
                 className="project-link"
-                onClick={() => setSelectedProject(project)}
+                onClick={() => handleModalClick(project)}
                 style={{ backgroundColor: project.color }}
               >
                 <span>Explore Project</span>
@@ -200,68 +218,62 @@ const ProjectsPage = () => {
         ))}
       </div>
 
-      {/* Enhanced Modal */}
+      {/* Modal Portal */}
       {selectedProject && (
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedProject(null)}>
-              ✕
-            </button>
-            
-            <div className="modal-header">
-              <h2>{selectedProject.title}</h2>
-              <div className="modal-badges">
-                <span className="modal-category" style={{ backgroundColor: selectedProject.color }}>
-                  {selectedProject.category}
-                </span>
-                <span className="modal-status" style={{ backgroundColor: getStatusColor(selectedProject.status) }}>
-                  {selectedProject.status}
-                </span>
-              </div>
+        <Modal onClose={closeModal}>
+          <div className="modal-header">
+            <h2>{selectedProject.title}</h2>
+            <div className="modal-badges">
+              <span className="modal-category" style={{ backgroundColor: selectedProject.color }}>
+                {selectedProject.category}
+              </span>
+              <span className="modal-status" style={{ backgroundColor: getStatusColor(selectedProject.status) }}>
+                {selectedProject.status}
+              </span>
+            </div>
+          </div>
+
+          <div className="modal-content">
+            <div className="modal-images">
+              {selectedProject.images.map((img, i) => (
+                <div key={i} className="image-container">
+                  <img src={img} alt={selectedProject.title} />
+                  <div className="image-overlay"></div>
+                </div>
+              ))}
             </div>
 
-            <div className="modal-content">
-              <div className="modal-images">
-                {selectedProject.images.map((img, i) => (
-                  <div key={i} className="image-container">
-                    <img src={img} alt={selectedProject.title} />
-                    <div className="image-overlay"></div>
-                  </div>
-                ))}
+            <div className="modal-details">
+              <div className="detail-section">
+                <h3>Overview</h3>
+                <p>{selectedProject.fullDescription}</p>
               </div>
 
-              <div className="modal-details">
-                <div className="detail-section">
-                  <h3>Overview</h3>
-                  <p>{selectedProject.fullDescription}</p>
-                </div>
+              <div className="detail-section">
+                <h3>Key Features</h3>
+                <ul className="features-list">
+                  {selectedProject.features.map((feature, i) => (
+                    <li key={i}>
+                      <span className="feature-icon">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                <div className="detail-section">
-                  <h3>Key Features</h3>
-                  <ul className="features-list">
-                    {selectedProject.features.map((feature, i) => (
-                      <li key={i}>
-                        <span className="feature-icon">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="detail-section">
-                  <h3>Technologies Used</h3>
-                  <div className="modal-tech-stack">
-                    {selectedProject.technologies.map((tech, i) => (
-                      <span key={i} className="modal-tech-tag" style={{ borderColor: selectedProject.color }}>
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              <div className="detail-section">
+                <h3>Technologies Used</h3>
+                <div className="modal-tech-stack">
+                  {selectedProject.technologies.map((tech, i) => (
+                    <span key={i} className="modal-tech-tag" style={{ borderColor: selectedProject.color }}>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Modal>
       )}
     </div>
   );
