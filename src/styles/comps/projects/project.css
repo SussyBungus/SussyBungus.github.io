@@ -1,4 +1,6 @@
-/* Projects Page */
+/* ===========================
+   Projects Page - General
+=========================== */
 .projects-page {
   min-height: 100vh;
   padding: 120px 24px 60px;
@@ -13,7 +15,9 @@
   transform: translateY(0);
 }
 
-/* Background Elements */
+/* ===========================
+   Background Elements
+=========================== */
 .projects-bg-elements {
   position: absolute;
   top: 0;
@@ -35,29 +39,9 @@
   animation: float-gentle 10s ease-in-out infinite;
 }
 
-.circle-1 {
-  width: 300px;
-  height: 300px;
-  top: 10%;
-  right: -100px;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 200px;
-  height: 200px;
-  bottom: 20%;
-  left: -80px;
-  animation-delay: 4s;
-}
-
-.circle-3 {
-  width: 150px;
-  height: 150px;
-  top: 60%;
-  right: 10%;
-  animation-delay: 8s;
-}
+.circle-1 { width: 300px; height: 300px; top: 10%; right: -100px; animation-delay: 0s; }
+.circle-2 { width: 200px; height: 200px; bottom: 20%; left: -80px; animation-delay: 4s; }
+.circle-3 { width: 150px; height: 150px; top: 60%; right: 10%; animation-delay: 8s; }
 
 @keyframes float-gentle {
   0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.6; }
@@ -65,7 +49,9 @@
   66% { transform: translate(-15px, 15px) scale(0.95); opacity: 0.4; }
 }
 
-/* Header Section */
+/* ===========================
+   Header Section
+=========================== */
 .projects-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -99,21 +85,6 @@
   animation: expand-line 1.2s ease 1s both;
 }
 
-@keyframes gradient-text {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes title-appear {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes expand-line {
-  from { width: 0; }
-  to { width: 200px; }
-}
-
 .projects-description {
   max-width: 700px;
   color: #666;
@@ -124,12 +95,9 @@
   animation: fade-in 1s ease 0.6s both;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Projects Stats */
+/* ===========================
+   Header Stats
+=========================== */
 .projects-stats {
   display: flex;
   justify-content: center;
@@ -138,9 +106,7 @@
   animation: slide-up 1s ease 0.9s both;
 }
 
-.stat-item {
-  text-align: center;
-}
+.stat-item { text-align: center; }
 
 .stat-number {
   display: block;
@@ -158,12 +124,9 @@
   letter-spacing: 1px;
 }
 
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Projects Grid */
+/* ===========================
+   Projects Grid & Cards
+=========================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -174,7 +137,6 @@
   z-index: 10;
 }
 
-/* Project Cards */
 .project-card {
   background: linear-gradient(145deg, #fff6f2, #fff0eb);
   border-radius: 24px;
@@ -182,9 +144,7 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 182, 160, 0.2);
-  box-shadow: 
-    0px 15px 35px rgba(255, 154, 126, 0.08),
-    0px 5px 15px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 15px 35px rgba(255, 154, 126, 0.08), 0px 5px 15px rgba(0, 0, 0, 0.04);
   transition: all 0.5s ease;
   opacity: 0;
   transform: translateY(50px) scale(0.95);
@@ -197,32 +157,21 @@
 
 .project-card:hover {
   transform: translateY(-15px) scale(1.02);
-  box-shadow: 
-    0px 25px 50px rgba(255, 154, 126, 0.12),
-    0px 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 25px 50px rgba(255, 154, 126, 0.12), 0px 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .project-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(255, 154, 126, 0.02), 
-    rgba(255, 182, 160, 0.04),
-    transparent
-  );
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 154, 126, 0.02), rgba(255, 182, 160, 0.04), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover::before {
-  opacity: 1;
-}
+.project-card:hover::before { opacity: 1; }
 
-/* Card Header */
+/* ---- Card Header ---- */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -249,10 +198,8 @@
   letter-spacing: 0.5px;
 }
 
-/* Card Content */
-.card-content {
-  margin-bottom: 2rem;
-}
+/* ---- Card Content ---- */
+.card-content { margin-bottom: 2rem; }
 
 .project-title {
   font-size: 1.6rem;
@@ -262,9 +209,7 @@
   transition: color 0.3s ease;
 }
 
-.project-card:hover .project-title {
-  color: var(--accent-color, #FF9A7E);
-}
+.project-card:hover .project-title { color: var(--accent-color, #FF9A7E); }
 
 .project-description {
   font-size: 1rem;
@@ -273,7 +218,7 @@
   line-height: 1.6;
 }
 
-/* Tech Stack */
+/* ---- Tech Stack ---- */
 .project-tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -303,7 +248,7 @@
   font-style: italic;
 }
 
-/* Card Footer */
+/* ---- Card Footer ---- */
 .card-footer {
   display: flex;
   justify-content: center;
@@ -339,11 +284,9 @@
   transition: left 0.6s ease;
 }
 
-.project-link:hover .button-shine {
-  left: 100%;
-}
+.project-link:hover .button-shine { left: 100%; }
 
-/* Card Decoration */
+/* ---- Card Decoration ---- */
 .card-decoration {
   position: absolute;
   top: -20px;
@@ -359,13 +302,13 @@
   33% { transform: translate(10px, -10px) rotate(120deg) scale(1.1); }
   66% { transform: translate(-5px, 5px) rotate(240deg) scale(0.9); }
 }
-/* Enhanced Modal - Fixed positioning and responsiveness */
+
+/* ===========================
+   Modal Styles
+=========================== */
 .modal-overlay {
   position: fixed;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.65);
@@ -390,13 +333,11 @@
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 
-    0px 25px 60px rgba(0, 0, 0, 0.2),
-    0px 10px 30px rgba(255, 154, 126, 0.1);
+  box-shadow: 0px 25px 60px rgba(0,0,0,0.2),0px 10px 30px rgba(255,154,126,0.1);
   animation: slideUp 0.4s ease;
   position: relative;
-  border: 1px solid rgba(255, 182, 160, 0.2);
-  overflow: auto; /* Remove scroll completely */
+  border: 1px solid rgba(255,182,160,0.2);
+  overflow: auto;
   box-sizing: border-box;
 }
 
@@ -419,372 +360,160 @@
   z-index: 10;
 }
 
-.modal-close:hover {
-  transform: scale(1.1) rotate(90deg);
-  box-shadow: 0px 8px 20px rgba(255, 154, 126, 0.3);
-}
+.modal-close:hover { transform: scale(1.1) rotate(90deg); box-shadow: 0px 8px 20px rgba(255,154,126,0.3); }
 
-/* Modal Header */
-.modal-header {
-  margin-bottom: 2rem;
-  text-align: center;
-  flex-shrink: 0;
-}
+.modal-header { margin-bottom: 2rem; text-align: center; flex-shrink: 0; }
 
-.modal-header h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 800;
-  color: #2c2c2c;
-  margin-bottom: 1rem;
-}
+.modal-header h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: #2c2c2c; margin-bottom: 1rem; }
 
-.modal-badges {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+.modal-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-.modal-category,
-.modal-status {
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+.modal-category, .modal-status { padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Modal Content - No scroll, flexible layout */
 .modal-content {
   display: flex;
   gap: 3rem;
   flex: 1;
-  min-height: 0; /* Important for flex children */
-  overflow: hidden;
-}
-
-.modal-images {
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   min-height: 0;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
-.image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  flex: 1;
-}
+.modal-images { flex: 1 1 45%; display: flex; flex-direction: column; gap: 1rem; min-height: 0; }
 
-.modal-images img {
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+.image-container { position: relative; overflow: hidden; border-radius: 16px; flex: 1; }
+
+.modal-images img { width: 100%; height: 100%; border-radius: 16px; object-fit: cover; transition: transform 0.3s ease; }
 
 .image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 154, 126, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, rgba(255,154,126,0.1), transparent);
+  opacity: 0; transition: opacity 0.3s ease;
 }
 
-.image-container:hover img {
-  transform: scale(1.05);
-}
+.image-container:hover img { transform: scale(1.05); }
+.image-container:hover .image-overlay { opacity: 1; }
 
-.image-container:hover .image-overlay {
-  opacity: 1;
-}
+.modal-details { flex: 1 1 50%; display: flex; flex-direction: column; gap: 1.5rem; min-height: 0; }
 
-.modal-details {
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  min-height: 0;
-}
-
-.detail-section {
-  flex-shrink: 0;
-}
+.detail-section { flex-shrink: 0; }
 
 .detail-section h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #FF9A7E;
-  margin-bottom: 1rem;
-  position: relative;
+  font-size: 1.3rem; font-weight: 700; color: #FF9A7E; margin-bottom: 1rem; position: relative;
 }
 
 .detail-section h3::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, #FF9A7E, #FFB6A0);
-  border-radius: 2px;
+  content: ''; position: absolute; bottom: -5px; left: 0; width: 50px; height: 3px;
+  background: linear-gradient(90deg, #FF9A7E, #FFB6A0); border-radius: 2px;
 }
 
-.detail-section p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.7;
-}
+.detail-section p { font-size: 1rem; color: #666; line-height: 1.7; }
 
 /* Features List */
-.features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.features-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  color: #555;
-}
+.features-list { list-style: none; padding: 0; margin: 0; }
+.features-list li { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 1rem; color: #555; }
 
 .feature-icon {
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #4ECDC4, #45B7D1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  color: white;
-  font-weight: bold;
-  flex-shrink: 0;
+  width: 20px; height: 20px; background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: white; font-weight: bold; flex-shrink: 0;
 }
 
 /* Modal Tech Stack */
-.modal-tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
+.modal-tech-stack { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 
 .modal-tech-tag {
-  padding: 0.6rem 1.2rem;
-  border: 2px solid;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease;
-  white-space: nowrap;
+  padding: 0.6rem 1.2rem; border: 2px solid; border-radius: 20px; font-size: 0.9rem;
+  font-weight: 600; background: rgba(255,255,255,0.5); transition: all 0.3s ease; white-space: nowrap;
 }
 
-.modal-tech-tag:hover {
-  background: var(--accent-color, #FF9A7E);
-  color: white;
-  transform: scale(1.05);
-}
+.modal-tech-tag:hover { background: var(--accent-color, #FF9A7E); color: white; transform: scale(1.05); }
 
-/* Responsive Design for Modal */
+/* ===========================
+   Responsive Modal
+=========================== */
 @media (max-width: 1024px) {
-  .modal {
-    max-width: 95vw;
-    padding: 2.5rem;
-  }
-
-  .modal-content {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .modal-images,
-  .modal-details {
-    flex: 1 1 100%;
-  }
-
-  .modal-images {
-    max-height: 300px;
-  }
+  .modal { max-width: 95vw; padding: 2.5rem; }
+  .modal-content { flex-direction: column; gap: 2rem; }
+  .modal-images, .modal-details { flex: 1 1 100%; }
+  .modal-images { max-height: 300px; }
 }
 
 @media (max-width: 768px) {
-  .modal-overlay {
-    padding: 15px;
-  }
-
-  .modal {
-    padding: 2rem;
-    max-height: 95vh;
-    border-radius: 20px;
-  }
-
-  .modal-close {
-    top: 1rem;
-    right: 1rem;
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  .modal-content {
-    gap: 1.5rem;
-  }
-
-  .modal-images {
-    max-height: 250px;
-  }
-
-  .detail-section {
-    margin-bottom: 1.5rem;
-  }
-
-  .detail-section h3 {
-    font-size: 1.2rem;
-  }
-
-  .features-list li {
-    font-size: 0.9rem;
-  }
-
-  .modal-tech-stack {
-    gap: 0.5rem;
-  }
-
-  .modal-tech-tag {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
+  .modal-overlay { padding: 15px; }
+  .modal { padding: 2rem; max-height: 95vh; border-radius: 20px; }
+  .modal-close { top: 1rem; right: 1rem; width: 35px; height: 35px; font-size: 1rem; }
+  .modal-content { gap: 1.5rem; }
+  .modal-images { max-height: 250px; }
+  .detail-section { margin-bottom: 1.5rem; }
+  .detail-section h3 { font-size: 1.2rem; }
+  .features-list li { font-size: 0.9rem; }
+  .modal-tech-stack { gap: 0.5rem; }
+  .modal-tech-tag { padding: 0.5rem 1rem; font-size: 0.8rem; }
 }
 
 @media (max-width: 480px) {
-  .modal-overlay {
-    padding: 10px;
-  }
-
-  .modal {
-    padding: 1.5rem;
-    max-height: 98vh;
-    border-radius: 16px;
-  }
-
-  .modal-header h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .modal-badges {
-    gap: 0.5rem;
-  }
-
-  .modal-category,
-  .modal-status {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .modal-content {
-    gap: 1rem;
-  }
-
-  .modal-images {
-    max-height: 200px;
-  }
-
-  .detail-section h3 {
-    font-size: 1.1rem;
-  }
-
-  .detail-section p {
-    font-size: 0.9rem;
-  }
-
-  .features-list li {
-    font-size: 0.85rem;
-  }
-
-  .modal-tech-tag {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
+  .modal-overlay { padding: 10px; }
+  .modal { padding: 1.5rem; max-height: 98vh; border-radius: 16px; }
+  .modal-header h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .modal-badges { gap: 0.5rem; }
+  .modal-category, .modal-status { padding: 0.5rem 1rem; font-size: 0.8rem; }
+  .modal-content { gap: 1rem; }
+  .modal-images { max-height: 200px; }
+  .detail-section h3 { font-size: 1.1rem; }
+  .detail-section p { font-size: 0.9rem; }
+  .features-list li { font-size: 0.85rem; }
+  .modal-tech-tag { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
 }
 
-/* Remove custom scrollbar completely */
-.modal::-webkit-scrollbar {
-  display: none;
+/* ===========================
+   Scrollbar Removal
+=========================== */
+.modal::-webkit-scrollbar { display: none; background: transparent; width: 0px; }
+.modal { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes gradient-text {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.modal {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+@keyframes title-appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes expand-line {
+  from { width: 0; }
+  to { width: 200px; }
 }
 
-@keyframes slideUp {
-  from { 
-    transform: translateY(50px) scale(0.95); 
-    opacity: 0; 
-  }
-  to { 
-    transform: translateY(0) scale(1); 
-    opacity: 1; 
-  }
-}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
-/* Accessibility Improvements */
-.modal-close:focus {
-  outline: 2px solid #FF9A7E;
-  outline-offset: 2px;
-}
+@keyframes slide-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-.modal-overlay:focus {
-  outline: none;
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* High contrast mode support */
+@keyframes slideUp { from { transform: translateY(50px) scale(0.95); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+
+/* ===========================
+   Accessibility
+=========================== */
+.modal-close:focus { outline: 2px solid #FF9A7E; outline-offset: 2px; }
+.modal-overlay:focus { outline: none; }
+
+/* High contrast */
 @media (prefers-contrast: high) {
-  .modal {
-    border: 2px solid #FF9A7E;
-  }
-  
-  .modal-header h2 {
-    color: #000;
-  }
-  
-  .detail-section p {
-    color: #333;
-  }
+  .modal { border: 2px solid #FF9A7E; }
+  .modal-header h2 { color: #000; }
+  .detail-section p { color: #333; }
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .modal-overlay,
-  .modal {
-    animation: none !important;
-  }
-  
-  .modal-close:hover {
-    transform: none !important;
-  }
-  
-  .image-container:hover img {
-    transform: none !important;
-  }
+  .modal-overlay, .modal { animation: none !important; }
+  .modal-close:hover { transform: none !important; }
+  .image-container:hover img { transform: none !important; }
 }

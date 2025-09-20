@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../styles/comps/about/stats.css";
-
+import siteData from "../../data/sitdata";
 const Stats = () => {
   const statsRef = useRef([]);
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef();
 
   const statsData = [
-    { label: "Years Coding", value: 7, icon: "💻", color: "#FF6B6B", description: "Building digital solutions" },
+    { label: "Years Coding", value: siteData.yearsOfCoding, icon: "💻", color: "#FF6B6B", description: "Building digital solutions" },
     { label: "Projects Completed", value: 6, icon: "🚀", color: "#4ECDC4", description: "From concept to reality" },
     { label: "Hackathon Project", value: 2, icon: "⚡", color: "#45B7D1", description: "AI-powered innovation" },
     { label: "Leadership Roles", value: 3, icon: "👑", color: "#96CEB4", description: "Guiding teams to success" },

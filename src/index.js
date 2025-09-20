@@ -4,19 +4,27 @@ import './styles/index.css';
 import App from './app.js';
 import reportWebVitals from './reportWebVitals';
 
-// Disable right-click and certain key combinations
-document.addEventListener("contextmenu", (event) => event.preventDefault());
+// Disable right-click
+document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-document.addEventListener("keydown", (event) => {
+// Disable double-click selection
+document.addEventListener("dblclick", (e) => e.preventDefault());
+
+// Disable certain key combinations
+document.addEventListener("keydown", (e) => {
+  const key = e.key.toUpperCase(); // normalize case
+
   if (
-    event.key === "F12" ||
-    (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) ||
-    (event.ctrlKey && event.key === "U")
+    key === "F12" || // F12 dev tools
+    (e.ctrlKey && e.shiftKey && (key === "I" || key === "J")) || // Ctrl+Shift+I/J
+    (e.ctrlKey && key === "U") // View source
   ) {
-    event.preventDefault();
+    e.preventDefault();
+    e.stopPropagation();
   }
 });
 
+// Initialize React app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
