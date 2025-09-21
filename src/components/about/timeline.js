@@ -6,28 +6,57 @@ const Timeline = () => {
   const observerRef = useRef();
 
   const timelineData = [
-    { 
-      year: "2019", 
-      title: "The Beginning",
-      content: "Started coding seriously — Python basics & problem solving", 
-      icon: "🌱",
-      color: "#4ECDC4"
-    },
-    { 
-      year: "2024", 
-      title: "Expansion Phase",
-      content: "Built projects in Unity & explored web dev with React", 
-      icon: "🚀",
-      color: "#45B7D1"
-    },
-    { 
-      year: "2025", 
-      title: "Innovation Era",
-      content: "Developing Drift and Relax, studying AP Computer Science, and creating AI tools", 
-      icon: "⚡",
-      color: "#FF9A7E"
-    }
-  ];
+  {
+    year: "2019",
+    title: "First Lines of Code",
+    content: "Started coding with basic JavaScript and built simple browser projects.",
+    icon: "🌱",
+    color: "#4ECDC4",
+  },
+  {
+    year: "2020",
+    title: "New Languages",
+    content: "Learned Vue.js for front-end development and began exploring Python fundamentals.",
+    icon: "📘",
+    color: "#5D9CEC",
+  },
+  {
+    year: "2021",
+    title: "Python Deep Dive",
+    content: "Focused on Python, improving problem-solving skills and backend concepts.",
+    icon: "🐍",
+    color: "#A29BFE",
+  },
+  {
+    year: "2022",
+    title: "Web & AI Foundations",
+    content: "Explored web design principles and built interactive apps with Gradio.",
+    icon: "💻",
+    color: "#F78FB3",
+  },
+  {
+    year: "2023",
+    title: "JavaScript Mastery",
+    content: "Studied JavaScript in depth—ES6+, advanced patterns, and full-stack workflows.",
+    icon: "⚙️",
+    color: "#FFB142",
+  },
+  {
+    year: "2024",
+    title: "AI & Machine Learning",
+    content: "Learned AI/ML concepts and integrated them into Gradio projects.",
+    icon: "🤖",
+    color: "#45B7D1",
+  },
+  {
+    year: "2025",
+    title: "Innovation Era",
+    content: "Building the Drift and Relax game, studying AP CS, and creating React-based AI tools.",
+    icon: "🚀",
+    color: "#FF9A7E",
+  },
+];
+
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(

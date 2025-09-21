@@ -73,50 +73,29 @@
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
-  opacity: 0;
+  opacity: 0; /* start hidden */
 }
 
-.timeline-item.left {
-  justify-content: flex-end;
-}
+/* Left / right positioning */
+.timeline-item.left  { justify-content: flex-end; }
+.timeline-item.right { justify-content: flex-start; }
 
-.timeline-item.right {
-  justify-content: flex-start;
+/* Animate ALL items when section visible */
+.timeline-section.visible .timeline-item:nth-child(odd) {
+  animation: slide-in-left 1s ease forwards;
 }
-
-/* Staggered Animations */
-.timeline-1 {
-  animation: slide-in-left 1s ease 0.3s both;
-}
-
-.timeline-2 {
-  animation: slide-in-right 1s ease 0.6s both;
-}
-
-.timeline-3 {
-  animation: slide-in-left 1s ease 0.9s both;
+.timeline-section.visible .timeline-item:nth-child(even) {
+  animation: slide-in-right 1s ease forwards;
 }
 
 @keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+  from { opacity: 0; transform: translateX(-50px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 @keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+  from { opacity: 0; transform: translateX(50px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 /* Timeline Content */
@@ -131,7 +110,7 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0px 15px 35px rgba(255, 154, 126, 0.1),
     0px 5px 15px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 182, 160, 0.15);
@@ -140,7 +119,7 @@
 
 .timeline-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 
+  box-shadow:
     0px 25px 50px rgba(255, 154, 126, 0.15),
     0px 10px 25px rgba(0, 0, 0, 0.08);
 }
@@ -202,8 +181,8 @@
 }
 
 @keyframes decoration-spin {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
   100% { transform: rotate(360deg) scale(1); }
 }
 
@@ -222,29 +201,23 @@
 }
 
 @keyframes dot-pulse {
-  0%, 100% { 
-    transform: translateX(-50%) scale(1); 
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
     box-shadow: 0px 4px 15px rgba(255, 154, 126, 0.3);
   }
-  50% { 
-    transform: translateX(-50%) scale(1.2); 
+  50% {
+    transform: translateX(-50%) scale(1.2);
     box-shadow: 0px 6px 25px rgba(255, 154, 126, 0.5);
   }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .timeline-container {
-    padding: 0 1rem;
-  }
+  .timeline-container { padding: 0 1rem; }
 
-  .timeline-header h2 {
-    font-size: 2.2rem;
-  }
+  .timeline-header h2 { font-size: 2.2rem; }
 
-  .timeline-line {
-    display: none;
-  }
+  .timeline-line { display: none; }
 
   .timeline-item {
     justify-content: center !important;
@@ -257,40 +230,22 @@
     max-width: 100%;
   }
 
-  .timeline-card {
-    padding: 1.5rem;
-  }
+  .timeline-card { padding: 1.5rem; }
 
-  .timeline-dot {
-    display: none;
-  }
+  .timeline-dot { display: none; }
 
-  .timeline-1,
-  .timeline-2,
-  .timeline-3 {
-    animation: fade-in-up 1s ease both;
+  .timeline-section.visible .timeline-item {
+    animation: fade-in-up 1s ease forwards;
   }
-
-  .timeline-1 { animation-delay: 0.3s; }
-  .timeline-2 { animation-delay: 0.6s; }
-  .timeline-3 { animation-delay: 0.9s; }
 }
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 480px) {
-  .timeline-header h2 {
-    font-size: 2rem;
-  }
+  .timeline-header h2 { font-size: 2rem; }
 
   .card-header {
     flex-direction: column;
@@ -304,11 +259,7 @@
     font-size: 1.5rem;
   }
 
-  .timeline-year {
-    font-size: 1.5rem;
-  }
+  .timeline-year { font-size: 1.5rem; }
 
-  .card-body h3 {
-    font-size: 1.2rem;
-  }
+  .card-body h3 { font-size: 1.2rem; }
 }
