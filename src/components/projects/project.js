@@ -76,6 +76,17 @@ const ProjectsPage = () => {
       images: [previewImg],
       features: ["Expense Tracking", "Budget Planning", "Savings Goals", "Financial Analytics"]
     },
+    {
+      title: "Focus AI",
+      description: "Procrastination-busting app that uses AI to help users stay focused and productive.",
+      fullDescription: "A procrastination application that has a built-in AI assistant to help users stay focused, manage tasks, and improve productivity through personalized recommendations and insights.",
+      technologies: ["React", "Next.js", "SQL", "Supabase", "OpenAI APIs", "TailwindCSS", "Framer Motion", "Vercel", "GitHub"],
+      status: "In Development/Live",
+      category: "Ai/ML & Web Development",
+      color: "#FF6F91",
+      images: [previewImg],
+      features: ["AI-Powered Focus", "Task Management", "Personalized Insights", "Productivity Tracking"]
+    },
   ];
 
   useEffect(() => {
