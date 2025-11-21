@@ -446,14 +446,6 @@ const sections = {
           </div>
         </div>
       )
-    },
-    profile: {
-      title: '$dir profile',
-      content: (
-       <div className={styles.sectionContent}>
-          <Character />
-</div>
-      )
     }
   };
 
