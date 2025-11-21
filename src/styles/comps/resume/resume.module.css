@@ -1,0 +1,640 @@
+/* resume.module.css */
+
+.cyberResume {
+  font-family: 'Courier New', Consolas, monospace;
+  background: #000000;
+  color: #00ff00;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.particlesCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.cursorGlow {
+  position: fixed;
+  width: 256px;
+  height: 256px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.08) 0%, transparent 70%);
+  transition: left 0.1s, top 0.1s;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 1600px;
+  height: 95vh;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background: #000000;
+  border-bottom: 1px solid #00ff00;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terminalButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminalBtn {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #00ff00;
+  border-radius: 50%;
+}
+
+.terminalTitle {
+  font-size: 14px;
+  letter-spacing: 3px;
+  flex: 1;
+}
+
+.terminalStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.statusIndicator {
+  width: 8px;
+  height: 8px;
+  background: #00ff00;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.terminalBody {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  border-right: 1px solid #00ff00;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.navButton {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  color: #00ff00;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.active {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.navButton::before {
+  content: '> ';
+}
+
+.scanSection {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.scanButton {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  color: #00ff00;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.scanButton:hover {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.scanOutput {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.contentHeader {
+  margin-bottom: 24px;
+}
+
+.contentTitle {
+  color: #00ff00;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.contentDivider {
+  height: 1px;
+  background: rgba(0, 255, 0, 0.3);
+}
+
+.sectionContent {
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #00ff00;
+}
+
+.textGray {
+  color: #888;
+}
+
+.textXs {
+  font-size: 12px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skillTree {
+  margin-left: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.experienceItem {
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 2px solid #00ff00;
+}
+
+.experienceTitle {
+  color: #00ff00;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.experienceDate {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.experienceList {
+  margin-left: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  list-style: none;
+  padding: 0;
+}
+
+.experienceList li {
+  margin-bottom: 4px;
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.certCard:hover {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.certCheckmark {
+  color: #00ff00;
+  font-size: 18px;
+}
+
+.contactCard {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.contactLabel {
+  color: #00ff00;
+  margin-bottom: 8px;
+}
+
+.contactValue {
+  margin-left: 16px;
+}
+
+.commandLine {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 255, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.commandPrompt {
+  color: #00ff00;
+  white-space: nowrap;
+}
+
+.commandInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.commandInput::placeholder {
+  color: #444;
+}
+
+.cursorBlink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminalFooter {
+  border-top: 1px solid #00ff00;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  background: #000000;
+}
+
+.footerStats {
+  display: flex;
+  gap: 24px;
+}
+
+.footerStatus {
+  animation: blink 2s infinite;
+}
+
+/* Boot Screen */
+
+.bootScreen {
+  min-height: 100vh;
+  background: #000000;
+  color: #00ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+}
+
+.bootSequence {
+  max-width: 800px;
+  width: 100%;
+}
+
+.bootHeader {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.asciiLogo {
+  font-size: 8px;
+  line-height: 1.2;
+  color: #00ff00;
+  animation: glitchLogo 3s infinite;
+  text-shadow: 0 0 10px #00ff00;
+  margin: 0;
+}
+
+@keyframes glitchLogo {
+  0%, 90%, 100% { opacity: 1; transform: translate(0); }
+  92% { opacity: 0.8; transform: translate(-2px, 2px); }
+  94% { opacity: 0.9; transform: translate(2px, -2px); }
+}
+
+.bootSubtitle {
+  font-size: 14px;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  animation: fadeIn 1s ease-in;
+}
+
+.bootTimestamp {
+  font-size: 10px;
+  color: #00aa00;
+  margin-top: 5px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.bootProgress {
+  margin: 30px 0;
+}
+
+.bootLineWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: slideInLeft 0.3s ease-out forwards;
+  font-size: 13px;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.bootBracket {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.bootStatus {
+  color: #00ff00;
+  font-weight: bold;
+  min-width: 25px;
+  text-align: center;
+  animation: pulse 1s infinite;
+}
+
+.bootText {
+  color: #00ff00;
+  flex: 1;
+}
+
+.bootDots {
+  color: #00ff00;
+  animation: dotPulse 1.5s infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.bootProgressBar {
+  width: 100%;
+  height: 20px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid #00ff00;
+  border-radius: 3px;
+  margin: 30px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, #00ff00 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: progressScan 6.5s linear forwards;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+@keyframes progressScan {
+  0% { width: 0%; background-position: 0% 0%; }
+  100% { width: 100%; background-position: 200% 0%; }
+}
+
+.bootFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.bootLoading {
+  letter-spacing: 3px;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.bootSpinner {
+  font-size: 16px;
+  animation: spinnerRotate 0.8s infinite steps(4);
+  display: inline-block;
+}
+
+@keyframes spinnerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.bootLine {
+  animation: fadeIn 0.5s ease-in forwards;
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 0, 0.3);
+  border: 1px solid #00ff00;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .terminalBody { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #00ff00;
+  }
+  .skillsGrid { grid-template-columns: 1fr; }
+  .asciiLogo { font-size: 6px; }
+}
+/* Transition Animations */
+.fadeOut {
+  animation: fadeOutAnimation 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutAnimation {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 0.8s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.statCard {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ff00;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Matrix Canvas */
+.matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.2;
+}
+/* Theme Selector */
+.activeTheme {
+  border-color: #00ff00 !important;
+  background: rgba(0, 255, 0, 0.1) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.themeColor {
+  width: 100%;
+  height: 20px;
+  border-radius: 2px;
+}
+
+
+/* Terminal Output */
+.terminalOutput {
+  margin-top: 24px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.outputBlock {
+  margin-bottom: 16px;
+}
+
+.outputCommand {
+  color: #00ff00;
+  margin-bottom: 4px;
+}
+
+.outputResponse {
+  color: #888;
+  white-space: pre-line;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+
+
+

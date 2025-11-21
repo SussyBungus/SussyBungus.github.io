@@ -1,0 +1,22 @@
+/* styles/character.module.css
+   Version 3 — High detail pixel-3D head + hair
+   Organized naming, CSS variables for color/shading, and small idle animation
+*/
+
+/* container */
+.pixelCharacter3D {
+  width: 400px;
+  height: 500px;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.charWrapper{
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 18s linear infinite;
+  transition: transform 300ms ease;
+}
+
