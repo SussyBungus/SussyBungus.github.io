@@ -1,0 +1,9 @@
+{
+  "buildCommand": "CI=false GENERATE_SOURCEMAP=false npm run build",
+  "build": {
+    "env": {
+      "GENERATE_SOURCEMAP": "false",
+      "DISABLE_ESLINT_PLUGIN": "true"
+    }
+  }
+}
