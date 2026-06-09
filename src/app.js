@@ -4,7 +4,7 @@ import Home from "./pages/index";
 import About from "./pages/about";
 import Project from "./pages/project";
 import Gallery from "./pages/blog";
-import Valentine from "./pages/valentine";
+import Yula1 from "./pages/yula1";
 import NotFound from "./pages/error/404"; 
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/valentine" element={<Valentine />} />
+        <Route path="/yula1" element={<Yula1 />} />
 
         <Route path="*" element={<NotFound />} /> {/* Catch all errors */}
       </Routes>
