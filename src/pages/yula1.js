@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/yula1.css";
+import s from "../styles/yula1.module.css";
 
 // ── edit your reasons here ──────────────────────────────────────────────────
 const REASONS = [
@@ -15,7 +15,6 @@ const REASONS = [
   "Simply because you are you — and that's more than enough",
 ];
 
-// short label shown on each card row
 const LABELS = [
   "the way you show up",
   "that laugh",
@@ -30,16 +29,26 @@ const LABELS = [
 ];
 // ───────────────────────────────────────────────────────────────────────────
 
+// flower variety mix — lily, peony, hydrangea, tulip alternating
+const PETALS = ["🌸", "🌷", "💐", "🌺", "🌸", "🌷", "💐", "🌺", "🌸"];
+
 function Loader({ hidden }) {
-  const petals = ["🌸", "🌷", "🌸", "🌷", "✿", "🌷", "🌸", "🌷", "🌸"];
   return (
-    <div className={`loader${hidden ? " hidden" : ""}`} aria-hidden={hidden}>
-      <div className="loader__petals">
-        {petals.map((p, i) => (
-          <span key={i} className="loader__petal">{p}</span>
-        ))}
+    <div className={`${s.loader}${hidden ? ` ${s.loaderHidden}` : ""}`} aria-hidden={hidden}>
+      <div className={s.loaderInner}>
+        <div className={s.loaderPetals}>
+          {PETALS.map((p, i) => (
+            <span
+              key={i}
+              className={s.loaderPetal}
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {p}
+            </span>
+          ))}
+        </div>
+        <p className={s.loaderText}>something for you…</p>
       </div>
-      <p className="loader__text">something for you…</p>
     </div>
   );
 }
@@ -47,7 +56,6 @@ function Loader({ hidden }) {
 function Modal({ reason, index, onClose }) {
   const visible = reason !== null;
 
-  // close on backdrop click or Escape key
   useEffect(() => {
     if (!visible) return;
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -55,32 +63,31 @@ function Modal({ reason, index, onClose }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [visible, onClose]);
 
-  // lock body scroll while open
   useEffect(() => {
     document.body.style.overflow = visible ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [visible]);
 
+  const num = String(index + 1).padStart(2, "0");
+
   return (
     <>
       <div
-        className={`backdrop${visible ? " visible" : ""}`}
+        className={`${s.backdrop}${visible ? ` ${s.backdropVisible}` : ""}`}
         onClick={onClose}
         aria-hidden="true"
       />
       <div
-        className={`modal${visible ? " visible" : ""}`}
+        className={`${s.modal}${visible ? ` ${s.modalVisible}` : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label={`Reason ${index + 1}`}
       >
-        <div className="modal__handle" />
-        <p className="modal__eyebrow">reason {String(index + 1).padStart(2, "0")}</p>
-        <span className="modal__number" aria-hidden="true">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <p className="modal__text">{reason}</p>
-        <button className="modal__close" onClick={onClose}>
+        <div className={s.modalHandle} />
+        <p className={s.modalEyebrow}>reason {num}</p>
+        <span className={s.modalNumber} aria-hidden="true">{num}</span>
+        <p className={s.modalText}>{reason}</p>
+        <button className={s.modalClose} onClick={onClose}>
           <span>✕</span> close
         </button>
       </div>
@@ -88,7 +95,7 @@ function Modal({ reason, index, onClose }) {
   );
 }
 
-export default function App() {
+export default function Yula() {
   const [loaded, setLoaded] = useState(false);
   const [loaderHidden, setLoaderHidden] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -101,7 +108,6 @@ export default function App() {
 
   const open = (i) => setActiveIndex(i);
   const close = () => setActiveIndex(null);
-
   const activeReason = activeIndex !== null ? REASONS[activeIndex] : null;
 
   return (
@@ -109,44 +115,43 @@ export default function App() {
       <Loader hidden={loaderHidden} />
 
       {loaded && (
-        <main className="page">
-          {/* ── hero ── */}
-          <header className="hero">
-            <p className="hero__eyebrow">just for you ✦</p>
-            <h1 className="hero__title">
+        <main className={s.page}>
+          <header className={s.hero}>
+            <p className={s.heroEyebrow}>just for you ✦</p>
+            <h1 className={s.heroTitle}>
               {REASONS.length} reasons<br />
               you are <em>perfect</em>
             </h1>
-            <p className="hero__sub">tap any reason to open it</p>
+            <p className={s.heroSub}>tap any to open it</p>
           </header>
 
-          {/* ── list ── */}
-          <ul className="list" role="list">
+          <ul className={s.grid} role="list">
             {LABELS.map((label, i) => (
-              <li key={i} style={{ listStyle: "none" }}>
+              <li key={i}>
                 <button
-                  className="card"
-                  style={{ animationDelay: `${0.1 + i * 0.06}s` }}
+                  className={s.card}
+                  style={{ animationDelay: `${0.08 + i * 0.07}s` }}
                   onClick={() => open(i)}
                   aria-haspopup="dialog"
                 >
-                  <span className="card__num">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="card__label">{label}</span>
-                  <span className="card__arrow" aria-hidden="true">↗</span>
+                  <span className={s.cardBg} aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className={s.cardArrow} aria-hidden="true">↗</span>
+                  <span className={s.cardNum}>{String(i + 1).padStart(2, "0")}</span>
+                  <span className={s.cardLabel}>{label}</span>
                 </button>
               </li>
             ))}
           </ul>
 
-          {/* ── footer ── */}
-          <footer className="footer">
-            <span className="footer__flower">🌷</span>
-            <p className="footer__text">don't you ever forget it</p>
+          <footer className={s.footer}>
+            <span className={s.footerFlower}>🌷</span>
+            <p className={s.footerText}>don't you ever forget it</p>
           </footer>
         </main>
       )}
 
-      {/* ── modal ── */}
       <Modal reason={activeReason} index={activeIndex ?? 0} onClose={close} />
     </>
   );
