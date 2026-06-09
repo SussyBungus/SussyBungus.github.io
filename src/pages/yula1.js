@@ -3,29 +3,45 @@ import s from "../styles/yula1.module.css";
 
 // ── edit your reasons here ──────────────────────────────────────────────────
 const REASONS = [
-  "You make every room feel warmer just by being in it",
-  "Your laugh is genuinely contagious — it's impossible not to smile",
-  "You care so deeply about the people you love, even when you don't say it",
-  "You're stronger than you ever give yourself credit for",
-  "The way your eyes light up when you talk about things you love",
-  "You always know exactly what to say — or when to say nothing at all",
-  "You find beauty in the small, ordinary moments others walk right past",
-  "You've grown so much, and you don't even see how far you've come",
-  "You make ordinary days feel like something worth remembering",
-  "Simply because you are you — and that's more than enough",
+  "Everything about your hair is so cute. Idk how you call your hair chopped is so pretty and smells nice.",
+  "Your eyes are so pretty. I like how they are and they are very cute. Every time i stare at u i get lostt",
+  "Your cheeks are so cuteee. I loveee to squish them and poke them even though you hate them soo muchh.",
+  "How can you hate such a cute face, it's so pretty and beautiful and the silly looks you give me. I love them.",
+  "That pretty smile on your face is so gah damn contiguous, everytime i see you smile it makes me happy. It's so cute seeing you happy.",
+  "Ticklish ah child, i love tickling especially cause your so ticklish everywhere is so funny.",
+  "How can someone call themselves fat when they're literally a baddie, like your legs are baddie shaped wink wink",
+  "Everytime you try to be taller than me is so funny, you'll always be my lil cutie hehe.",
+  "I just love holding hands with you.",
+  "Your voice is so pretty, I love hearing you yap about anything. It is so pretty, I love it, you'll never be annoying in my eyes.",
+  "You silly ah laugh, everytime time I do something dumb. I love itt.",
+  "I love your shyness, it's so cute when you turn into a cherry blushing, or never looking me in the eyes.",
+  "I love how you care so much about, even small details that somehow you can figure out. Like when I'm sad through text.",
+  "Everytime you're with me I instantly get happy. Even when I feel abit down everything just goes away.",
+  "I love how silly you are, your clumsiness, walking into bins and tripping is clumsy but funny. I just love how silly you are.",
+  "I like how you're an oddball like me. Maybe not as an oddball but you match my weirdness and it makes me feel me.",
+  "Seeing cute animals like mice or squirrels will always make me smile. You get so happy when you see cute animals.",
+  "I love how you're just as autistic as me. You're like my missing chromosome. Always laughing with me, giggling. I love it.",
 ];
 
 const LABELS = [
-  "the way you show up",
-  "that laugh",
+  "that hair",
+  "those eyes",
+  "those cheeks",
+  "that face",
+  "the smile",
+  "ticklish everywhere",
+  "such a baddie",
+  "lil cutie",
+  "holding hands",
+  "that voice",
+  "the laugh",
+  "the shyness",
   "how deeply you care",
-  "your quiet strength",
-  "the light in your eyes",
-  "your perfect timing",
-  "noticing the little things",
-  "how far you've come",
-  "making ordinary magical",
-  "just being you",
+  "the presence",
+  "the silliness",
+  "the weirdness",
+  "cute aggression",
+  "the autism",
 ];
 // ───────────────────────────────────────────────────────────────────────────
 
@@ -84,7 +100,7 @@ function Modal({ reason, index, onClose }) {
         aria-label={`Reason ${index + 1}`}
       >
         <div className={s.modalHandle} />
-        <p className={s.modalEyebrow}>reason {num}</p>
+        <p className={s.modalEyebrow}>reason {num} - {LABELS[index]}</p>
         <span className={s.modalNumber} aria-hidden="true">{num}</span>
         <p className={s.modalText}>{reason}</p>
         <button className={s.modalClose} onClick={onClose}>
@@ -117,12 +133,12 @@ export default function Yula() {
       {loaded && (
         <main className={s.page}>
           <header className={s.hero}>
-            <p className={s.heroEyebrow}>just for you ✦</p>
+            <p className={s.heroEyebrow}>just for you ✦ {REASONS.length} stars for</p>
             <h1 className={s.heroTitle}>
-              {REASONS.length} reasons<br />
-              you are <em>perfect</em>
+              {REASONS.length} reasons why<br />
+              you are so <em>perfect</em>
             </h1>
-            <p className={s.heroSub}>tap any to open it</p>
+            <p className={s.heroSub}>tap each one to open it 🌷</p>
           </header>
 
           <ul className={s.grid} role="list">
@@ -137,7 +153,6 @@ export default function Yula() {
                   <span className={s.cardBg} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className={s.cardArrow} aria-hidden="true">↗</span>
                   <span className={s.cardNum}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={s.cardLabel}>{label}</span>
                 </button>

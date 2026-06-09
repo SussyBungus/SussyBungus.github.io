@@ -138,79 +138,86 @@
   aspect-ratio: 1 / 1;
   background: var(--surface);
   border: 1.5px solid var(--border);
-  border-radius: 18px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 16px;
   cursor: pointer;
   width: 100%;
-  text-align: left;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.15s;
   opacity: 0;
   animation: fadeUp 0.5s var(--ease-out) forwards;
 }
 .card:hover {
-  border-color: var(--rose);
-  box-shadow: 0 4px 20px rgba(200, 84, 106, 0.12);
+  border-color: #e8a0b0;
+  box-shadow: 0 6px 28px rgba(200, 84, 106, 0.1);
 }
 .card:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
-/* big ghost number behind */
+/* soft rose tint that fills on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #fff5f7 0%, #fde8ee 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ghost watermark — perfectly centered, clipped */
 .cardBg {
   position: absolute;
-  top: -8px;
-  right: -4px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Cormorant Garant', serif;
-  font-size: 5.5rem;
+  font-size: clamp(4.5rem, 18vw, 6.5rem);
   font-weight: 300;
-  color: var(--pink-soft);
+  color: #f9dde5;
   line-height: 1;
   user-select: none;
   pointer-events: none;
-  transition: color 0.2s;
+  letter-spacing: -0.02em;
+  transition: color 0.25s;
 }
 .card:hover .cardBg {
-  color: #f5b8c8;
+  color: #f5c8d4;
 }
 
+/* the real number — sits on top, styled to pop */
 .cardNum {
   font-family: 'Cormorant Garant', serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--rose);
+  font-size: clamp(1.6rem, 6vw, 2rem);
+  font-weight: 300;
+  color: var(--rose-deep);
   line-height: 1;
-  margin-bottom: 6px;
+  letter-spacing: 0.04em;
   position: relative;
   z-index: 1;
 }
 
 .cardLabel {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 400;
   color: var(--ink-muted);
-  line-height: 1.35;
+  line-height: 1.4;
   position: relative;
   z-index: 1;
-}
-
-.cardArrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 0.75rem;
-  color: var(--border);
-  transition: color 0.2s;
-  z-index: 1;
-}
-.card:hover .cardArrow {
-  color: var(--rose);
+  max-width: 90%;
 }
 
 /* ── backdrop ────────────────────────────────────── */
