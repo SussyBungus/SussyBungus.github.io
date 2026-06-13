@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import s from "../styles/yula1.module.css";
+import s from "../styles/comps/yuliya/yula1.module.css";
 
 // ── edit your reasons here ──────────────────────────────────────────────────
 const LABELS = [

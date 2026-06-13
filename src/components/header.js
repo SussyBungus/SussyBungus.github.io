@@ -15,7 +15,7 @@ function Header() {
   const navLinks = [
     { path: "/about", label: "About" },
     { path: "/projects", label: "Projects" },
-    { path: "/gallery", label: "Gallery" },
+    { path: "/yuliya", label: "Yuliya" },
     // Add more pages easily here
   ];
 

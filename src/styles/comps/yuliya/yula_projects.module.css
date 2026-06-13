@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg:           #FEF0F4;
+  --surface:      #FFFFFF;
+  --border:       #F2C8D4;
+  --pink-soft:    #F9D0DC;
+  --pink-mid:     #f0a0b8;
+  --rose:         #C8546A;
+  --rose-deep:    #9B3048;
+  --ink:          #3D1A24;
+  --ink-muted:    #9C7480;
+  --overlay:      rgba(61, 26, 36, 0.48);
+  --radius:       20px;
+  --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.hero {
+  padding-top: clamp(48px, 12vw, 80px);
+  padding-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease-out) 0.1s forwards;
+}
+
+.heroEyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 14px;
+}
+
+.heroTitle {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.heroSub {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.15s;
+  opacity: 0;
+  animation: fadeUp 0.5s var(--ease-out) forwards;
+}
+.card:hover {
+  border-color: var(--pink-mid);
+  box-shadow: 0 6px 28px rgba(200, 84, 106, 0.1);
+}
+.card:active { transform: scale(0.95); }
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #fff5f7, #fde8ee);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+.card:hover::before { opacity: 1; }
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(4.5rem, 18vw, 6.5rem);
+  font-weight: 300;
+  color: #f9dde5;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  transition: color 0.25s;
+}
+.card:hover .cardBg { color: #f5c8d4; }
+
+.cardNum {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(1.4rem, 5vw, 1.75rem);
+  font-weight: 300;
+  color: var(--rose-deep);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.cardName {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.backdropVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border-radius: 28px 28px 0 0;
+  z-index: 110;
+  padding: 12px 28px 52px;
+  transition: transform 0.45s var(--ease-out);
+  will-change: transform;
+}
+.modalVisible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.modalHandle {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  margin: 0 auto 28px;
+}
+
+.modalMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modalEyebrow {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.modalTag {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 12px;
+  letter-spacing: 0.05em;
+}
+
+.modalNum {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(3.5rem, 18vw, 5rem);
+  font-weight: 300;
+  color: var(--pink-soft);
+  line-height: 1;
+  margin-bottom: 12px;
+  display: block;
+  user-select: none;
+}
+
+.modalTitle {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(1.6rem, 6vw, 2rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.modalDesc {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.modalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--rose);
+  border: none;
+  border-radius: 99px;
+  padding: 11px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.modalLink:hover { background: var(--rose-deep); }
+
+.modalClose {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 11px 22px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+}
+.modalClose:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+.footer {
+  margin-top: 52px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.6s var(--ease-out) 0.6s forwards;
+}
+.footerFlower { font-size: 1.3rem; display: block; margin-bottom: 8px; }
+.footerText {
+  font-family: 'Cormorant Garant', serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── password gate ────────────────────────────────── */
+.gate {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  transition: opacity 0.6s var(--ease-out);
+}
+
+.gateOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gateInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 32px;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease-out) 0.1s forwards;
+}
+
+.gateFlower {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.gateTitle {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(2.2rem, 8vw, 3.2rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.gateSub {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.gateInputWrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  transition: border-color 0.2s;
+}
+
+.gateInputWrap:focus-within {
+  border-color: var(--rose);
+}
+
+.gateInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--ink);
+  background: transparent;
+  letter-spacing: 0.1em;
+}
+
+.gateInput::placeholder {
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+}
+
+.gateBtn {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border: none;
+  background: var(--rose);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 0 99px 99px 0;
+}
+
+.gateBtn:hover { background: var(--rose-deep); }
+
+@keyframes gateShake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
+.gateShake {
+  animation: gateShake 0.45s var(--ease-out);
+  border-color: var(--rose) !important;
+}
+
