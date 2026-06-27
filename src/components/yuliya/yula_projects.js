@@ -13,10 +13,10 @@ const PROJECTS = [
     link: "/yula1",
   },
   {
-    name: "project two",
-    tag: "coming soon 🌷",
-    desc: "Something else made just for you. Check back soon.",
-    link: null,
+    name: "memory lane",
+    tag: "just for us 📺",
+    desc: "A cozy virtual living room made just for us. Pull a little journal off the wooden shelves to turn on the TV and flip through our favorite polaroids and sweet moments together.",
+    link: "/yula2",
   },
   {
     name: "project three",

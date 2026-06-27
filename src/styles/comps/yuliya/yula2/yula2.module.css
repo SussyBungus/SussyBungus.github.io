@@ -1,0 +1,186 @@
+.roomContainer {
+  min-height: 100vh;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 0%, #fde8ef 0%, #fef0f4 55%, #fce8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+/* subtle ceiling light bloom */
+.roomContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 180px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,230,240,0.55), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* floor shadow beneath the whole unit */
+.roomContainer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 90px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(180, 120, 140, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.entertainmentCenter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  height: 85vh;
+  max-height: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* drop shadow directly under the furniture */
+.entertainmentCenter::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 6%;
+  right: 6%;
+  height: 28px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(140, 90, 110, 0.22) 0%, transparent 72%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.centerSection {
+  flex: 1;
+  max-width: 700px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 120px;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.lowConsole {
+  width: 100%;
+  height: 120px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 40%),
+    linear-gradient(180deg, #f5ede0 0%, #e8d5bc 100%);
+  border: 10px solid #c9a882;
+  border-top-color: #dfc09a;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.3),
+    inset 8px 0 14px rgba(255,255,255,0.1),
+    10px 10px 20px rgba(80, 58, 38, 0.12);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.basket {
+  width: min(100px, 80%);
+  height: 48px;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.16) 0 3px, transparent 3px 7px),
+    repeating-linear-gradient(-45deg, rgba(120, 90, 60, 0.12) 0 3px, transparent 3px 7px),
+    #c8a882;
+  border: 2px solid #b8956e;
+  border-radius: 3px;
+  box-shadow: inset 0 -3px 6px rgba(77, 57, 39, 0.1);
+  opacity: 0.9;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #FEF0F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loaderHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loaderInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.loaderPetals {
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  grid-template-rows: repeat(3, 44px);
+  gap: 4px;
+  place-items: center;
+}
+
+.loaderPetal {
+  font-size: 1.65rem;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.3) rotate(-25deg);
+  animation: petalIn 0.55s ease forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderText {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #7c6f64;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.6s forwards;
+}
+
+@keyframes petalIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
